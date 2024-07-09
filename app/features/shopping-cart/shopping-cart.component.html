@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="container">
+    <h1>Shopping Cart</h1>
+  
+    <div *ngIf="cart.length > 0">
+      <div class="cart-item" *ngFor="let product of cart; let i = index">
+        <div>{{ product.name }} - ₹{{ product.price }}</div>
+        
+     
+        <button (click)="removeFromCart(i)" class="btn btn-danger btn-sm">Remove</button>
+      </div>
+      <hr>
+      <div class="total">
+        <p>Total Price: ₹{{ getTotalPrice() }}</p>
+        <a class="btn btn-primary" routerLink="checkout-form">Checkout</a>
+      </div>
+    </div>
+  
+    <div *ngIf="cart.length === 0" class="alert alert-info">
+      Your cart is empty.
+    </div>
+  
+    <hr>
+  
+    <h2>Products available</h2>
+  
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of products">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">{{ product.name }}</h3>
+            <p class="card-text">Price: ₹{{ product.price }}</p>
+            <button (click)="addToCart(product)" class="btn btn-primary btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>

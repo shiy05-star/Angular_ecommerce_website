@@ -1,0 +1,16 @@
+
+h1, h2, h3, h4, h5, h6
+ {
+    color: #321e7a; 
+    font-weight: bold; 
+}
+
+h1 {
+    font-size: 2rem; 
+}
+
+
+p {
+    font-size: 1rem; 
+    color: black;
+}

@@ -1,0 +1,18 @@
+<div class="details">
+  <div class="container d-flex justify-content-center">
+    <div class="card text-center" *ngIf="product">
+      <div class="card-body">
+        <h1 class="card-title">{{ product.name }}</h1>
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid mb-3">
+        <p class="card-text"><strong>Price: ₹</strong>{{ product.price | currency }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ product.description }}</p>
+        <button (click)="addToCart(product)" class="btn btn-primary btn-cart">Add to Cart</button>
+        <button (click)="backToProducts()" class="btn btn-secondary btn-cart">Back to Products</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center" *ngIf="!product">
+    <p>Loading product details...</p>
+  </div>
+</div>
